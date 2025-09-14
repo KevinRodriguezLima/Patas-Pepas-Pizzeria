@@ -1,6 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef } from "react";
+import trailer from "/videos/output3.mp4";
 
 const Final = () => {
   const videoRef = useRef(null);
@@ -16,7 +17,7 @@ const Final = () => {
         scrub: true,
         pin: true,
       }
-    })
+    });
 
     const tl = gsap.timeline({ 
       scrollTrigger: {
@@ -25,13 +26,17 @@ const Final = () => {
         end: '90% top',
         scrub: true,
       }
-    })
+    });
 
     tl.to('.final-content', { opacity: 1, duration: 1, scale: 1, ease: 'power1.inOut' });
 
     videoRef.current.onloadedmetadata = () => {
-      tl.to(videoRef.current, { currentTime: videoRef.current.duration, duration: 3, ease: 'power1.inOut' }, '<');
-    }
+      tl.to(videoRef.current, { 
+        currentTime: videoRef.current.duration, 
+        duration: 3, 
+        ease: 'power1.inOut' 
+      }, '<');
+    };
   });
 
   return (
@@ -42,7 +47,7 @@ const Final = () => {
           muted
           playsInline
           preload="auto"
-          src="/videos/output3.mp4"
+          src={trailer}
           className="size-full object-cover"
         />
       </div>
@@ -50,4 +55,4 @@ const Final = () => {
   )
 }
 
-export default Final
+export default Final;

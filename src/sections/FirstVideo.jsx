@@ -1,6 +1,7 @@
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { useRef } from "react"
+import { useRef } from "react";
+import video1 from "/videos/output1.mp4";
 
 const FirstVideo = () => {
   const videoRef = useRef(null);
@@ -16,14 +17,18 @@ const FirstVideo = () => {
         scrub: true,
         pin: true,
       }
-    })
+    });
 
     tl.to('.hero-section', { delay: 0.5, opacity: 0, ease: 'power1.inOut' });
     tl.to('.first-vd-wrapper', { opacity: 1, duration: 2, ease: 'power1.inOut' });
 
     videoRef.current.onloadedmetadata = () => {
-      tl.to(videoRef.current, { currentTime: videoRef.current.duration, duration: 3, ease: 'power1.inOut' }, '<');
-    }
+      tl.to(
+        videoRef.current,
+        { currentTime: videoRef.current.duration, duration: 3, ease: 'power1.inOut' },
+        '<'
+      );
+    };
   }, []);
 
   return (
@@ -34,12 +39,12 @@ const FirstVideo = () => {
           muted
           playsInline
           preload="auto"
-          src="/videos/output1.mp4"
+          src={video1}
           className="first-vd"
         />
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default FirstVideo
+export default FirstVideo;

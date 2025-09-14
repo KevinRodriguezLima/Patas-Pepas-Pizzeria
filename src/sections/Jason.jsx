@@ -1,5 +1,8 @@
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
+import jason1 from "/images/jason-1.webp"
+import jason2 from "/images/jason-2.webp"
+import jason3 from "/images/jason-3.webp"
 
 const Jason = () => {
   useGSAP(() => {
@@ -20,7 +23,10 @@ const Jason = () => {
         start: 'top center',
         end: '80% center',
         scrub: 2
-      }, y: -300, duration: 1, ease: 'power1.inOut'
+      }, 
+      y: -300, 
+      duration: 1, 
+      ease: 'power1.inOut'
     }, '<')
   }) 
 
@@ -32,16 +38,16 @@ const Jason = () => {
         <p>Jason grew up around grifters and crooks. After a stint in the Army trying to shake off his troubled teens, he found himself in the Keys doing what he knows best, working for local drug runners. It might be time to try something new.</p>
 
         <div className="jason-2">
-          <img src="/images/jason-2.webp" />
+          <img src={jason2} alt="Jason 2" />
         </div>
       </div>
 
       <div className="space-y-5 mt-96 img-box">
         <div className="jason-1">
-          <img src="/images/jason-1.webp" />
+          <img src={jason1} alt="Jason 1" />
         </div>
         <div className="jason-3">
-          <img src="/images/jason-3.webp" />
+          <img src={jason3} alt="Jason 3" />
         </div>
       </div>
     </section>
