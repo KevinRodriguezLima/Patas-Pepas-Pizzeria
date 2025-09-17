@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+    text {
+      font-family: 'Luckiest Guy', cursive;
+      font-size: 120px;
+      fill: #FFFFFF;
+      text-anchor: middle;
+    }
+  </style>
+
+  <!-- Texto centrado -->
+  <text x="50%" y="180">PATAS</text>
+  <text x="50%" y="320">PEPA'S</text>
+  <text x="50%" y="460">PIZZERIA</text>
+</svg>
